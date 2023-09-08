@@ -1,0 +1,45 @@
+@import "@/assets/styles/variables"
+
+header
+  padding: 15px 0
+  background: #FFF
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25)
+  .header-left
+    display: flex
+    justify-content: space-between
+    width: 50%
+    .logo
+      display: flex
+      align-items: center
+      span
+        font-family: Montserrat
+        font-size: 32px
+        font-weight: 700
+        margin-left: 12px
+    .tab
+      display: flex
+      align-items: center
+      border-radius: 40px
+      border: 1px solid #D9D9D9
+      background: #FFF
+      padding: 8px 16px
+      cursor: pointer
+      span
+        margin-left: 12px
+        font-size: 16px
+        font-weight: 500
+    .rounded-pill
+      width: 410px
+      input
+        &::placeholder
+          color: #999
+          font-size: 16px
+          font-weight: 400
+
+  .header-right
+    display: flex
+    align-items: baseline
+    .circle
+      //margin: 0 24px
+      margin-right: 24px
+      cursor: pointer

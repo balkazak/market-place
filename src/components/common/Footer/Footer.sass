@@ -1,0 +1,47 @@
+@import "@/assets/styles/variables"
+
+footer
+  background: #EEE
+  padding: 30px 0
+  .footer-left, .footer-right
+    display: flex
+    align-items: center
+  .logo
+    margin-right: 40px
+    align-items: center
+    display: flex
+    cursor: pointer
+    span
+      color: #333
+      font-family: Montserrat
+      font-size: 32px
+      font-weight: 700
+      margin-left: 10px
+  .socials
+    svg
+      margin: 0 12px
+  .footer-right
+    display: flex
+    span
+      color: #555
+      font-size: 17px
+      font-weight: 500
+      line-height: 22px
+  .footer-menu
+    display: flex
+    flex-direction: column
+    margin: 0 50px
+    white-space: nowrap
+    a
+      color: #333
+      font-size: 14px
+      font-weight: 500
+      line-height: 25px
+      text-decoration: none
+      margin: 5px 0
+hr
+  margin: 30px 0 20px
+@media (max-width: 1000px)
+  footer .footer-right
+    display: block
+
