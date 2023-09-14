@@ -110,8 +110,135 @@
         <textarea placeholder="Триггеры отображения" class="form-control mt-4" id="exampleFormControlTextarea1"
                   rows="3"></textarea>
       </div>
-      <div class="column">Column 2</div>
-      <div class="column">Column 3</div>
+      <div class="column">
+        <div class="column-header">
+          Инфо о товаре
+        </div>
+        <div class="dropdown">
+          <!-- Trigger button -->
+          <button data-bs-toggle="dropdown" class="btn dropdown-toggle" type="button" id="dropdownMenuButton"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span>Сезонность</span>
+          </button>
+
+          <!-- Dropdown menu -->
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Profile</a>
+            <a class="dropdown-item" href="#">Settings</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Logout</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <input type="text" placeholder="Состав  ">
+          </div>
+          <div class="col-6">
+            <div class="dropdown">
+              <!-- Trigger button -->
+              <button data-bs-toggle="dropdown" class="btn dropdown-toggle " type="button" id="dropdownMenuButton"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span>Единица измерений</span>
+              </button>
+
+              <!-- Dropdown menu -->
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Profile</a>
+                <a class="dropdown-item" href="#">Settings</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Logout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <input type="text" placeholder="Состав  ">
+          </div>
+          <div class="col-6">
+            <div class="dropdown">
+              <!-- Trigger button -->
+              <button data-bs-toggle="dropdown" class="btn dropdown-toggle " type="button" id="dropdownMenuButton"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span>Единица измерений</span>
+              </button>
+
+              <!-- Dropdown menu -->
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Profile</a>
+                <a class="dropdown-item" href="#">Settings</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Logout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <input type="text" placeholder="Состав  ">
+          </div>
+          <div class="col-6">
+            <div class="dropdown">
+              <!-- Trigger button -->
+              <button data-bs-toggle="dropdown" class="btn dropdown-toggle " type="button" id="dropdownMenuButton"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span>Единица измерений</span>
+              </button>
+
+              <!-- Dropdown menu -->
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Profile</a>
+                <a class="dropdown-item" href="#">Settings</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Logout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column-header mt-4">
+          Габарит и вес
+        </div>
+        <input type="text" placeholder="Длина упаковки, мм *">
+        <input type="text" placeholder="Ширина упаковки, мм *">
+        <input type="text" placeholder="Высота упаковки, мм *">
+        <input type="text" placeholder="Вес упаковки *">
+        <div class="column-header mt-4">
+          Дополнительные опции
+        </div>
+        <input type="text" placeholder="Дополнительная опция 1">
+        <input type="text" placeholder="Дополнительная опция 2">
+      </div>
+      <div class="column">
+        <div class="column-header mb-4">
+          Габарит и вес
+        </div>
+        <div class="image-uploader">
+          <div class="preview-list">
+            <div class="table-image" :style="{ backgroundImage: 'url(' + selectedOption.url + ')' }">
+            </div>
+            <div>
+
+            </div>
+            <div v-for="(image, index) in uploadedImages" :key="index"  class=" preview-item image-container">
+              <img  :src="image" alt="Preview">
+              <div class="overlay">
+                <IconDeleteImgHover @click="removeImage(index)" />
+              </div>
+            </div>
+          </div>
+          <div class="drop-zone" @dragover.prevent @drop="handleDrop">
+            <IconUploadImg />
+
+            <p>Переместите фото сюда </p>
+            <input type="file" ref="fileInput" @change="handleFileInput" multiple style="display: none;" />
+          </div>
+        </div>
+        <div class="confirm">
+          <button class="btn btn-main btn-cancel me-4">Отменить</button>
+          <button class="btn btn-main btn-orange ">Создать форму</button>
+
+        </div>
+      </div>
     </main>
   </div>
 </template>
@@ -119,9 +246,11 @@
 <script>
 import IconImportImg from "@/components/icons/IconImportImg.vue";
 import IconDelete from "@/components/icons/IconDelete.vue";
+import IconUploadImg from "@/components/icons/IconUploadImg.vue";
+import IconDeleteImgHover from "@/components/icons/IconDeleteImgHover.vue";
 
 export default {
-  components: {IconDelete, IconImportImg},
+  components: {IconDeleteImgHover, IconUploadImg, IconDelete, IconImportImg},
   data() {
     return {
       imageList: [],
@@ -173,7 +302,8 @@ export default {
           number: 44,
           checked: false
         }
-      ]
+      ],
+      uploadedImages: [],
     };
   },
   methods: {
@@ -197,6 +327,30 @@ export default {
     },
     deleteOption(index) {
       this.colorOptions.splice(index, 1);
+    },
+    handleDrop(event) {
+      event.preventDefault();
+      const files = event.dataTransfer.files;
+      this.handleFiles(files);
+    },
+    handleFileInput() {
+      const files = this.$refs.fileInput.files;
+      this.handleFiles(files);
+    },
+    handleFiles(files) {
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        if (file.type.startsWith("image/")) {
+          const reader = new FileReader();
+          reader.onload = () => {
+            this.uploadedImages.push(reader.result);
+          };
+          reader.readAsDataURL(file);
+        }
+      }
+    },
+    removeImage(index) {
+      this.uploadedImages.splice(index, 1);
     },
   },
 };
