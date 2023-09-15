@@ -1,0 +1,88 @@
+@import "@/assets/styles/variables"
+
+
+.page-content
+  .title
+    color: $black
+    font-size: 32px
+    font-weight: 300
+    line-height: 36px
+    white-space: nowrap
+    margin-right: 24px
+  .input-group
+    width: 510px
+    border-radius: 20px
+    border: 1px solid #EEE
+    background: #F5F5F5
+    input
+      background: #F5F5F5
+      &::placeholder
+        color: #999
+        font-size: 16px
+        font-weight: 400
+  .btn-search
+    font-size: 16px
+    font-weight: 400
+    line-height: 20px
+    color: $orange
+    border-radius: 20px
+    border: 1px solid #EEE
+    background: #FFF
+    margin-left: 24px
+    padding: 8px 24px
+  .dropdown-toggle
+    border-radius: 100px
+    border: 1px solid #D9D9D9
+    background: #FFF
+    padding: 8px 8px 8px 16px
+    margin-left: 24px
+    img
+      transform: scale(1.6)
+      margin-right: 20px
+    &::after
+      margin: 0 10px
+    span
+      color: #555
+      font-size: 16px
+      font-weight: 500
+  .item-img
+    width: 60px
+    height: 60px
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+  .item-title
+    color: $orange
+    font-size: 16px
+    font-weight: 500
+    line-height: 20px
+  .item-text, .item-text-gray
+    font-size: 16px
+    font-weight: 400
+    line-height: 20px
+  .item-text-gray
+    color: #777
+  .item-text
+    color: $black
+  .circle
+    width: 8px
+    height: 8px
+    background-color: #96C93D
+  .table-wrapper
+    height: calc(100vh - 560px)
+    overflow-y: scroll
+    margin-top: 30px
+  table
+    th
+      color: #777
+      font-size: 14px
+      font-weight: 500
+      line-height: 18px
+    td
+      padding: 14px
+      vertical-align: middle
+      &:nth-child(3)
+        width: 300px
+    tr:nth-child(odd)
+      td
+          background: #F5F5F5

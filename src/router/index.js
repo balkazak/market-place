@@ -8,6 +8,7 @@ import AddNewItem from "@/views/AdminSeller/AddNewItem/AddNewItem.vue";
 import StoreInfo from "@/views/AdminSeller/StoreInfo/StoreInfo.vue";
 import Orders from "@/views/AdminSeller/Orders/Orders.vue";
 import SingleOrder from "@/views/AdminSeller/SingleOrder/SingleOrder.vue";
+import GoodsList from "@/views/AdminSeller/Store/GoodsList/GoodsList.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -51,6 +52,11 @@ const router = createRouter({
       path: '/admin/seller/order',
       name: 'SingleOrder',
       component: SingleOrder
+    },
+    {
+      path: '/admin/seller/store/list',
+      name: 'GoodsList',
+      component: GoodsList
     },
     {
       path: '/about',
