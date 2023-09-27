@@ -9,6 +9,10 @@ import StoreInfo from "@/views/AdminSeller/StoreInfo/StoreInfo.vue";
 import Orders from "@/views/AdminSeller/Orders/Orders.vue";
 import SingleOrder from "@/views/AdminSeller/SingleOrder/SingleOrder.vue";
 import GoodsList from "@/views/AdminSeller/Store/GoodsList/GoodsList.vue";
+import Warehouse from "@/views/AdminSeller/Warehouse/Warehouse.vue";
+import PriceVariation from "@/views/AdminSeller/PriceVariation/PriceVariation.vue";
+import Chat from "@/views/AdminSeller/Chat/Chat.vue";
+import Profile from "@/views/AdminSeller/Profile/index.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -57,6 +61,26 @@ const router = createRouter({
       path: '/admin/seller/store/list',
       name: 'GoodsList',
       component: GoodsList
+    },
+    {
+      path: '/admin/seller/warehouse',
+      name: 'Warehouse',
+      component: Warehouse
+    },
+    {
+      path: '/admin/seller/prices',
+      name: 'PriceVariation',
+      component: PriceVariation
+    },
+    {
+      path: '/admin/seller/chat',
+      name: 'Chat',
+      component: Chat
+    },
+    {
+      path: '/admin/seller/profile',
+      name: 'Profile',
+      component: Profile
     },
     {
       path: '/about',

@@ -1,0 +1,159 @@
+@import "@/assets/styles/variables"
+
+.page-content
+  padding-bottom: 66px
+.card
+  padding: 24px
+  border-radius: 12px
+  background: #F5F5F5
+  border: none
+  .card-title
+    color: $black
+    font-size: 18px
+    font-weight: 500
+    line-height: 22px
+    margin-bottom: 18px
+  .card-body
+    display: flex
+    align-items: center
+  p
+    color: #7777
+    font-size: 16px
+    font-weight: 400
+    line-height: 20px
+    span
+      color: #333
+  .orange
+    color: #F2722C
+    font-weight: 500
+.btn-cancel
+  border-radius: 30px
+
+.ring-container
+  position: relative
+
+.circle
+  width: 8px
+  height: 8px
+  border-radius: 50%
+  position: absolute
+  top: 0
+  left: 0
+.ringring
+  -webkit-border-radius: 30px
+  height: 25px
+  width: 25px
+  position: absolute
+  left: -4px
+  top: -4px
+  -webkit-animation: pulsate 1s ease-out
+  -webkit-animation-iteration-count: infinite
+  opacity: 0.0
+.ring-green
+  border: 3px solid #62bd19
+.circle-green
+  background-color: #62bd19
+.ring-red
+  border: 3px solid #E53935
+.circle-red
+  background-color: #E53935
+@-webkit-keyframes pulsate
+  0%
+    -webkit-transform: scale(0.1, 0.1)
+    opacity: 0.0
+  50%
+    opacity: 1.0
+  100%
+    -webkit-transform: scale(1.2, 1.2)
+    opacity: 0.0
+.item-text, .item-text-gray
+  font-size: 16px
+  font-weight: 400
+  line-height: 20px
+.item-text-gray
+  color: #777
+.item-text
+  color: $black
+
+.warehouses
+  display: flex
+  padding: 36px 24px 24px 0
+  justify-content: space-between
+  .card-title
+    margin-left: 32px
+  .address
+    .item-text-gray
+      margin-bottom: 14px
+  .actions
+    display: flex
+    .quantity
+      border-radius: 12px 0 0 12px
+      border: 1px solid #D9D9D9
+      background: #FFF
+      height: fit-content
+      padding: 12px 16px
+    .switch
+      border-radius: 0 12px 12px 0
+      border: 1px solid #D9D9D9
+      background: #FFF
+      height: fit-content
+      padding: 11px 15px
+      margin-left: 1px
+      cursor: pointer
+.dropdown-toggle
+  border: 1px solid #D9D9D9
+  border-radius: 12px
+  background: #FFF
+  margin: 0 16px
+  padding: 10px 16px
+  span
+    margin-right: 32px
+.edit
+  border-radius: 12px
+  border: 1px solid #EEE
+  background: #FFF
+  padding: 8px
+  height: fit-content
+  cursor: pointer
+.title
+  margin: 16px 0
+  color: #333
+  font-size: 32px
+  font-weight: 300
+  line-height: 36px
+.card-right
+  .card-top
+    display: flex
+    justify-content: space-between
+    .image
+      width: 100px
+      height: 100px
+      background-repeat: no-repeat
+      background-position: center
+      background-size: 100% 100%
+      border-radius: 12px
+      border: 1px solid #D9D9D9
+  .btn-next
+    color: #F2722C
+    font-size: 16px
+    font-weight: 500
+    line-height: 22px
+    margin-top: 22px
+    span
+      margin-right: 12px
+  .warehouse-dropdown
+    display: flex
+    align-items: center
+    justify-content: space-between
+    border-radius: 12px
+    padding: 12px
+    border: 1px solid #D9D9D9
+    background: #FFF
+    .circle
+      position: unset
+      margin-right: 20px
+.dropdown-list
+  width: 190px
+  text-align: center
+  padding: 30px
+

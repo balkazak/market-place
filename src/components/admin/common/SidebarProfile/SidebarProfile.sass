@@ -1,0 +1,51 @@
+.sidebar
+  display: flex
+  flex-direction: column
+  width: 28%
+  border-right: 1px solid #D9D9D9
+  padding: 0 6.7vw 6.7vw 5.2vw
+  .card
+    border-radius: 12px
+    border: 1px solid #EEE
+    background: #FFF
+  .card-top
+    padding: 36px
+    text-align: center
+    justify-content: center
+  .title
+    color: #333
+    font-size: 18px
+    font-weight: 500
+    line-height: 22px
+    margin-top: 24px
+  .avatar
+    width: 84px
+    height: 84px
+    margin: 0 auto
+  .card-bottom
+    .title
+      padding-left: 36px
+    .sidebar-nav
+      display: flex
+      flex-direction: column
+      .link
+        white-space: nowrap
+        display: flex
+        align-items: center
+        padding: 20px 20px 20px 40px
+        color: var(--midnight-black, #333)
+        font-size: 16px
+        font-weight: 400
+        line-height: 20px
+        text-decoration: none
+        span
+          margin-left: 14px
+      .router-link-active.link
+        background: #f5f5f5
+        border-right: 3px solid #f2722c
+        .icon
+          path
+            stroke: red
+@media (max-width: 1000px)
+  .sidebar
+    height: 60vh
