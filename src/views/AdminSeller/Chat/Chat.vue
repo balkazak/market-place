@@ -9,9 +9,9 @@
     <main class="content">
       <div class=" p-0">
         <div class="card">
-          <div class="row  g-0">
+          <div class="row g-0">
             <div class="col-12 col-lg-5 border-right">
-              <div class="p-lg-3 p-2=0=== d-none d-md-block">
+              <div class="p-lg-3 p-2">
                 <div class="d-flex align-items-center">
                   <div class="input-group">
                     <div class="input-group-prepend">
@@ -88,13 +88,8 @@
                   </label>
                   <input type="file" id="fileInput" name="fileInput" class="file-input">
 
-                  <!-- Textarea Input with Emoji Support -->
                   <input id="messageInput" name="messageInput" type="text" placeholder="Type your message here...">
 
-                  <!-- Emoji Picker (if you have one) -->
-                  <!-- Add your emoji picker component here -->
-
-                  <!-- Send Button -->
                   <button type="submit" class="send">
                     <icon-send />
                   </button>

@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 import Header from '../components/common/Header/Header.vue'
 import AdminHomeView from "@/views/Admin/Forms/FieldsFormsView.vue";
 import AdminCategoryView from "@/views/Admin/Category/CategoryListView.vue";
@@ -20,7 +19,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: AdminHomeView
     },
     {
       path: '/admin/category',
@@ -85,9 +84,6 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue')
     },
 
